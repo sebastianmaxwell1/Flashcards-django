@@ -5,4 +5,4 @@ from .models import FlashcardFront
 class FlashcardFrontSerializer(serializers.ModelSerializer):
     class Meta:
         model = FlashcardFront
-        fields = ['question', 'card_number']
+        fields = ['question', 'answer', 'card_number']
