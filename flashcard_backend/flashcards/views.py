@@ -49,6 +49,20 @@ class FlashcardDetail(APIView):
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+    # def create(request):
+    #     form = FlashcardForm(request.POST or None, request.FILES or None)
+    #
+    #     context = {
+    #         'form': form
+    #     }
+    #
+    #     if form.is_valid():
+    #         form.save()
+    #         return FlashcardFront('flashcards:index')
+    #
+    #     else:
+    #         return render(request, 'flashcards/create.html', context)
+
     def delete(self, request, pk):
         flashcard = self.get_object(pk)
         flashcard.delete()
