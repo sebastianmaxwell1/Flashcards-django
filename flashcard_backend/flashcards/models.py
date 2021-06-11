@@ -1,11 +1,12 @@
 from django.db import models
 
 
-class FlashcardFront(models.Model):
-    question = models.CharField(max_length=50)
+class Flashcard(models.Model):
+    question = models.CharField(max_length=50, default=None)
     answer = models.CharField(max_length=50, null=True)
-    card_number = models.IntegerField(blank=True, null=True)
+    collection= models.ForeignKey('flashcards.Collection', default=None, null=True, on_delete=models.CASCADE)
+
+class Collection(models.Model):
+    title = models.CharField(max_length=50)
 
 
-
-# Create your models here.

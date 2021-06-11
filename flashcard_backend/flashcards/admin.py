@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import FlashcardFront
+from .models import Flashcard, Collection
 
-admin.site.register(FlashcardFront)
-# Register your models here.
+admin.site.register(Flashcard)
+admin.site.register(Collection)
+

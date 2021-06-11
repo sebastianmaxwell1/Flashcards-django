@@ -1,8 +1,13 @@
 from rest_framework import serializers
-from .models import FlashcardFront
+from .models import Flashcard, Collection
 
 
-class FlashcardFrontSerializer(serializers.ModelSerializer):
+class FlashcardSerializer(serializers.ModelSerializer):
     class Meta:
-        model = FlashcardFront
-        fields = ['question', 'answer', 'card_number']
+        model = Flashcard
+        fields = ['id', 'question', 'answer', 'collection']
+
+class CollectionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Collection
+        fields = ['id', 'title']
